@@ -1,1 +1,0 @@
-export { default } from "file:///Users/tmignon/Documents/minimal-nuxt-genome-browser/node_modules/@nuxt/vite-builder/dist/runtime/vite-node.mjs"
