@@ -1,8 +1,8 @@
 <template>
   <div>
-    <NuxtRouteAnnouncer />
-    <NuxtWelcome />
-    <JBrowse :assembly="assembly" :tracks="tracks" />
+    <ClientOnly>
+        <JBrowse :assembly="assembly" :tracks="tracks" />
+    </ClientOnly>
   </div>
 </template>
 
@@ -10,7 +10,7 @@
 <script setup>
     import JBrowse from './JBrowse.vue';
 
-    const assembly = ref({
+    const assembly = {
         name: 'GRCh38',
         aliases: ['hg38'],
         sequence: {
@@ -47,9 +47,9 @@
             },
         },
         },
-    })
+    }
     
-    const tracks = ref([
+    const tracks = [
         {
         type: 'BasicTrack',
         trackId:
@@ -97,6 +97,6 @@
             },
         },
         }
-    ])
+    ]
 </script>
 
